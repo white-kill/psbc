@@ -1,0 +1,2 @@
+/Users/zouli/Desktop/self/project/psbc/psbc/android/app/.cxx/RelWithDebInfo/6t6e6re5/x86_64/CMakeFiles/edit_cache.dir
+/Users/zouli/Desktop/self/project/psbc/psbc/android/app/.cxx/RelWithDebInfo/6t6e6re5/x86_64/CMakeFiles/rebuild_cache.dir

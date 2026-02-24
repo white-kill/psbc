@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/Users/zouli/fvm/versions/3.29.2/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/zouli/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/zouli/Desktop/self/project/psbc/psbc/android/app/.cxx/RelWithDebInfo/6t6e6re5/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/zouli/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/zouli/Desktop/self/project/psbc/psbc/android/app/.cxx/RelWithDebInfo/6t6e6re5/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}
