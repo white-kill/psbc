@@ -31,14 +31,15 @@ class _CardInfoState extends State<CardInfo> {
       return cardNumber;
     }
     try {
-      RegExp regex = RegExp(r'^(\d{4})(\d{2})\d+(\d{4})$');
+      RegExp regex = RegExp(r'^(\d{4})(\d{2})\d+(\d{1})(\d{3})$');
 
       if (regex.hasMatch(cleaned)) {
         Match match = regex.firstMatch(cleaned)!;
         String part1 = match.group(1)!;
         String part2 = match.group(2)!;
-        String part5 = match.group(3)!;
-        return '$part1 $part2** *** *** $part5';
+        String part3 = match.group(3)!;
+        String part4 = match.group(4)!;
+        return '$part1 $part2** **** ***$part3 $part4';
       }
       return cardNumber;
     } catch (e) {
