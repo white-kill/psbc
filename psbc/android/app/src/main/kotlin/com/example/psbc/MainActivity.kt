@@ -1,0 +1,5 @@
+package com.example.psbc
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity()
