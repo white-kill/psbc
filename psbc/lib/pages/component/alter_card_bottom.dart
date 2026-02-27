@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wb_base_widget/extension/widget_extension.dart';
 import 'package:wb_base_widget/text_widget/bank_text.dart';
+import 'package:psbc/config/app_config.dart';
 
 class AlterCardBottom extends StatefulWidget {
   const AlterCardBottom({super.key});
@@ -11,6 +12,30 @@ class AlterCardBottom extends StatefulWidget {
 }
 
 class _AlterCardBottomState extends State<AlterCardBottom> {
+
+  String formatBankCardWithRegex(String cardNumber) {
+    if (cardNumber.isEmpty) return '';
+    String cleaned = cardNumber.replaceAll(RegExp(r'[^\d]'), '');
+    if (cleaned.length < 16) {
+      return cardNumber;
+    }
+    try {
+      RegExp regex = RegExp(r'^(\d{4})(\d{2})\d+(\d{1})(\d{3})$');
+
+      if (regex.hasMatch(cleaned)) {
+        Match match = regex.firstMatch(cleaned)!;
+        String part1 = match.group(1)!;
+        String part2 = match.group(2)!;
+        String part3 = match.group(3)!;
+        String part4 = match.group(4)!;
+        return '$part1 $part2** **** ***$part3 $part4';
+      }
+      return cardNumber;
+    } catch (e) {
+      return cardNumber;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +68,7 @@ class _AlterCardBottomState extends State<AlterCardBottom> {
                  Column(
                    crossAxisAlignment: CrossAxisAlignment.start,
                    children: [
-                     BaseText(text: '1213 ****** 8765'),
+                     BaseText(text: formatBankCardWithRegex(AppConfig.config.abcLogic.card1()),),
                      SizedBox(height: 8.w,),
                      BaseText(text: '中国邮政银行',color: Color(0xff666666),)
                    ],

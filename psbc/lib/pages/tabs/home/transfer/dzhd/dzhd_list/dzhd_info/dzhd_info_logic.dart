@@ -24,6 +24,7 @@ class Dzhd_infoLogic extends GetxController {
     super.onInit();
 
     state.detail = Get.arguments?['model'] ?? ReceiptListDetail();
+    print(state.detail);
 
     print(state.detail.toJson());
     print(state.detail.transactionLogno);
@@ -67,7 +68,9 @@ class Dzhd_infoLogic extends GetxController {
           fixStr: ' ',
           maskCharCount: 6,
         );
-      case '收款人开户行转账金额(大写)':
+      case '收款人开户行':
+        return state.detail.oppositeBankName;
+      case '转账金额(大写)':
         return state.detail.capitalLettersAmount;
       case '附言':
         return state.detail.merchantBranch;
