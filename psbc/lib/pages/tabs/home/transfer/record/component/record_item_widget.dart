@@ -110,7 +110,7 @@ class _RecordItemWidgetState extends State<RecordItemWidget> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   BaseText(
-                    text: '${type(widget.model.detail?.type??'')}¥${widget.model.amount.abs().bankBalance}',
+                    text: '${type(widget.model.detail?.type??'')}¥${widget.model.amount.abs()}',
                     fontSize: 15,
                     color: getAmountColor(widget.model.detail?.type),
                   ),
